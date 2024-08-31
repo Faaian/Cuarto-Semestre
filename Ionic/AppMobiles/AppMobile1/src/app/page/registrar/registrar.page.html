@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <div>
+    <img width="150" src="assets/img/th.jpg" alt="">
+  </div>
+</ion-toolbar>
+  <ion-item>
+    <ion-input [(ngModel)]="email" label="Email" type="email" placeholder=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" label="Password" type="password" value=""></ion-input>
+  </ion-item>
+  <ion-button (click)="registrar()" expand="block">Registrar</ion-button>
+</ion-header>
