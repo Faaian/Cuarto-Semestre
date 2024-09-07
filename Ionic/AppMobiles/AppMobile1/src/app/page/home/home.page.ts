@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/service/firebase.service';
 
 @Component({
@@ -9,7 +9,18 @@ import { FirebaseService } from 'src/app/service/firebase.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(private firebase:FirebaseService, private router:Router) { }
+  email: string = ""
+  pass: string = ""
+  valor: number=0
+
+  constructor(private firebase:FirebaseService, private router:Router, private activate:ActivatedRoute) { 
+      this.activate.queryParams.subscribe(params => {
+      this.email=params['email'];
+      this.pass=params['password'];
+      this.valor=params['valor'];
+    //  console.log(this.email,this.pass,this.valor);
+    })
+  }
 
   ngOnInit() {
   }

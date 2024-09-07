@@ -1,9 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-  <div>
-    <img width="150" src="assets/img/th.jpg" alt="">
-  </div>
-</ion-toolbar>
+    <div>
+      <img width="150" src="assets/img/th.jpg" alt="">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
   <ion-item>
     <ion-input [(ngModel)]="email" label="Email" type="email" placeholder=""></ion-input>
   </ion-item>
@@ -11,19 +14,17 @@
     <ion-input [(ngModel)]="password" label="Password" type="password" value=""></ion-input>
   </ion-item>
   <ion-button (click)="login()" expand="block">login</ion-button>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">      
-      <ion-col class= "Registrar">
-        <div>
-          <a [routerLink]="['/registrar']">Registrar</a>
-        </div>
-        <div>
-          <a [routerLink]="['/recuperar']">Recuperar</a>
-        </div>
-      </ion-col>
-  <ion-toolbar>  
-  </ion-toolbar>
-  </ion-header>
+  <ion-row class="Registrar">
+    <ion-col>
+      <div>
+        <a [routerLink]="['/registrar']">Registrar</a>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <a [routerLink]="['/recuperar']">Recuperar</a>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { FirebaseService } from 'src/app/service/firebase.service';
 
@@ -20,8 +20,11 @@ export class LoginPage implements OnInit {
   async login(){
     try {
       let usuario=await this.firebase.auth(this.email,this.password);
-      console.log(usuario)
-      this.router.navigateByUrl('home');
+      console.log(usuario);
+      const navigationextras:NavigationExtras = {
+        queryParams:{email: this.email, password: this.password, valor: 9999}
+      };
+      this.router.navigate(['/home'],navigationextras);
     } catch(error){
       console.log(error);
       this.popAlert();
