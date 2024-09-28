@@ -1,0 +1,45 @@
+los endpoints esta conformado por protocolo: http/ el dominio : fallabella.cl // el recurso apiusuarios  que correscponde a una base de datos.
+ej :
+------------------------------------------------------------------------
+producto:
+id_producto
+nombre_producto
+precio
+descripcion
+categoria.
+ahora con los 4 metodos de las api rest
+
+GET obtener informacionde los productos
+GET http://miapp.com/api/productos.
+GET/api/productos/{id}
+GET http://miapp.com/api/productos/101.
+
+tengo un backoffice para agregar un nuevo producto
+con un:
+POST/api/productos
+añade un nuevo producto al protocolo
+POST http://miapp.com/api/productos
+
+Body(ejemplo JSON):
+{
+"nombre":"camisa",
+etc...}
+
+PUT-actualñizar informacion de un producto
+PUT/api/producto{id}
+PUT http://miapp.com/api/productos/101.
+Body(ejemplo JSON):
+{
+"nombre":"camisa",
+etc...} solo los campos que quieras actualizar.
+
+DELETE-eliminar producto
+DELETE/api/productos/{id}
+DELETE http://miapp.com/api/productos/101. tiene que ir el id identificador para no eliminar todo.
+-------------------------------------------------------------------------------------
+
+carrito de compras3
+Post PUT http://miapp.com/api/productos/10/productos
+devbeloper.marvel.com 
+descargar postman....
+
